@@ -1,4 +1,4 @@
-// npx jest
+// npx jest tests/app.test.ts
 
 // Importar los modulos necesarios
 import app from "../src/app";

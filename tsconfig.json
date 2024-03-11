@@ -112,5 +112,6 @@
     "src/models/habitoManager.ts",
     "src/models/modeloTarea.ts",
     "src/models/modeloHabito.ts",
+    "src/adapters/controllers/cli.ts",
   ]
 }
