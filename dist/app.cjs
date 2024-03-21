@@ -14,21 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dbconnection_1 = __importDefault(require("./config/dbconnection"));
-const staticMiddleware_1 = __importDefault(require("./adapters/backend/middleware/staticMiddleware"));
-const helmet_1 = __importDefault(require("helmet"));
-const mainPageMiddleware_1 = __importDefault(require("./adapters/backend/middleware/mainPageMiddleware"));
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 3000;
-app.use(helmet_1.default.contentSecurityPolicy({
-    directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'"],
-        styleSrc: ["'self'", "'unsafe-inline'"],
-        imgSrc: ["'self'", "data:"],
-    },
-}));
-app.use(staticMiddleware_1.default);
-app.get('/', mainPageMiddleware_1.default);
+const PORT = process.env.PORT || 27017;
 function iniciarServidor() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -43,5 +30,9 @@ function iniciarServidor() {
         }
     });
 }
+app.get("/", (_req, res) => {
+    console.log("Test funcionando correctamente");
+    res.send("Test funcionando correctamente");
+});
 exports.default = app;
 iniciarServidor();
