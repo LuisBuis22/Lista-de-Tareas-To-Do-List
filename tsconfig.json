@@ -110,7 +110,7 @@
     "src/app.ts",                                       
     "src/domain/models/habitoManager.ts",
     "src/domain/models/habitoManager.ts",
-    "src/domain/models/modeloTarea.ts",
+    "src/domain/models/taskModel.ts",
     "src/domain/models/modeloHabito.ts",
     "src/config/dbconnection.ts"
   ]

@@ -1,4 +1,4 @@
-import { Task } from "./modeloTarea";
+import { Task } from "./taskModel";
 
 export class TaskManager {
   // Guardar las tareas en una lista
