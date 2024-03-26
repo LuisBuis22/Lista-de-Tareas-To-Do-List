@@ -3,32 +3,18 @@ import { Task } from "./taskModel";
 export class TaskManager {
   // Guardar las tareas en una lista
   public tasks: Task[] = [];
-  // Contador de id para que al eliminar o modificar no se dupliquen, el autoincremento se maneja en addTask()
-  private contadorId: number;
 
   constructor() {
     this.tasks = [];
-    this.contadorId = 1;
-    }
-
-    // Función para generar un id único en cada tarea
-    public generateTaskId(): number {
-      return this.contadorId++;
-    }
+  }
 
   // Métodos relativos a las tareas
 
   // Añade a la lista tasks el objeto task obtenido de modeloTarea
   public addTask(task: Task): Task {
-    // Generar el id a partir del contador
-    const id = this.generateTaskId();
-
-    // Crear la newTask: Task con el id generado
-    const newTask: Task = {...task, id};
-
     // Agregar la tarea a la lista de tareas
-    this.tasks.push(newTask);
-    return newTask;
+    this.tasks.push(task);
+    return task;
   }
 
   // Filtra la tarea por medio del id y la elimina

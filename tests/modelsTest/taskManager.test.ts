@@ -1,6 +1,6 @@
 // npx jest tests/tareaManager.test.ts
 
-import { Task, TaskManager } from "../src/domain/models/tareaManager";
+import { Task, TaskManager } from "../../src/domain/models/taskManager";
 
 describe("Crear una tarea y añadirla a la lista", () => {
   it("Debe crear una tarea añadirla a la lista de tareas", () => {

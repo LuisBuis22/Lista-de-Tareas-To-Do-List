@@ -1,16 +1,14 @@
-import taskModelDB from "../adapters/data/taskSchemaDB";
-import { Task } from "../domain/models/taskModel";
+import { Task } from '../domain/models/taskModel';
+import { TaskManager } from '../domain/models/taskManager';
 
-
-
-async function createTask(taskData: Task): Promise<Task> {
-  //Crear la tarea en la base de datos
-  try {
-    const createdTask = taskModelDB.create(taskData);
-    return createdTask;
-  } catch(error) {
-    throw new Error("Error crating task");
-  }
+export interface CreateTaskUseCase {
+  execute(taskData: Task): Task;
 }
 
-export default createTask;
+export class CreateTaskService implements CreateTaskUseCase {
+  constructor(private taskManager: TaskManager) {}
+
+  execute(taskData: Task): Task {
+    return this.taskManager.addTask(taskData);
+  }
+}
